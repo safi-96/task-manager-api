@@ -5,5 +5,5 @@
 - `npm install apollo-server graphql pg dotenv serverless-postgres serverless-offline apollo-server-lambda`
 - Setup .env file
 
-## Run Application
-- sls offline
+## Run Application from console
+- `sls offline`
