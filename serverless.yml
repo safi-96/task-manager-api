@@ -1,0 +1,21 @@
+service: task-manager-api
+provider:
+  name: aws
+  runtime: nodejs16.x
+  environment:
+    DB_HOST: ${env:DB_HOST}
+    DB_PORT: ${env:DB_PORT}
+    DB_NAME: ${env:DB_NAME}
+    DB_USER: ${env:DB_USER}
+    DB_PASSWORD: ${env:DB_PASSWORD}
+
+plugins:
+  - serverless-offline
+
+functions:
+  graphql:
+    handler: server.handler
+    events:
+      - http:
+          path: graphql
+          method: post
